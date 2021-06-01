@@ -24,36 +24,14 @@ class Solution:
                 9:a+c
                 }
         importantNumbs2 = ["I","V","X","L","C","D","M"] #1,5,10,50,100,500,1000
-        pattern1 = {
-                1:"I",
-                2:"II",
-                3:"III",
-                4:"IV",
-                4:"V",
-                6:"VI",
-                7:"VII",
-                8:"VIII",
-                9:"IX"
-                }
-        pattern2 = {
-                10:"X",
-                20:"XX",
-                30:"XXX",
-                40:"XV",
-                50:"V",
-                60:"VX",
-                70:"VXX",
-                80:"VXXX",
-                90:"XC"
-                }
         # seesm that solution could be using 1-9 but being wary of which order (10, 100, 1000) they are placed.
 
         strValue = str(num)
-        sizeNum = len(strValue)
+        index = len(strValue) - 1
         romans = []
         for i in strValue:
-            if int(i)*10**sizeNum in importantNumbs:
-                romans.append(importantNumbs[int(i)])
-
+            a,b,c = [index,index +2]
+            romans.append(importantNumbs[int(i)])
+        return ''.join(romans)
 
 
